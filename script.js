@@ -1,11 +1,14 @@
 var APIkey = "c7c31d94";
-var queryURL = "https://www.omdbapi.com/?s=movie&page=1&apikey=trilogy"
+var page = 1;
 var movieData = []
+for (var p = 0; p < 10; p++) {
+var queryURL = "https://www.omdbapi.com/?s=movie&page="+page+"&apikey=trilogy"
 $.ajax({
     url: queryURL,
     method: "GET"
 }).then(function (response) {
     movieData = response.Search;
+    console.log(response);
     console.log(movieData);
     for (var i = 0; i < movieData.length; i++) {
         var movieCards = $('.movie-cards');
@@ -14,6 +17,8 @@ $.ajax({
         movieCards.append(movieCard);
     }
 })
+page++;
+}
 
 
 /* function makeCard() {
