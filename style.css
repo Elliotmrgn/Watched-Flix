@@ -1,0 +1,11 @@
+.wrapper,
+html,
+body{
+    height:100%
+}
+
+.card{
+    margin-left:20px;
+    margin-bottom:15px;
+    height:auto;
+}
